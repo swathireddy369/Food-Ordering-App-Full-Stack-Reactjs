@@ -71,15 +71,15 @@ const RestaurantDetails = () => {
             </section>
             <Divider />
             <section className='pt-[2rem] lg:flex relative'>
-                <div className='space-y-10 lg:w-[20%] filter  '>
-                    <div className='box space-y-5 lg:sticky top-28 '>
+                <div className='space-y-10 lg:w-[20%] filter '>
+                    <div className='box space-y-5 lg:sticky top-28 p-5 shadow-md'>
                         <div>
                             <Typography variant='h5' sx={{paddingBottom:'1rem'}}>
                                 Food Type
                             </Typography>
                             <FormControl className='py-10 space-y-5' component={"fieldset"}>
                                 <RadioGroup name="food_type" value={foodType || "all"} onChange={handleFilter}>
-                                {foodTypes.map((typeItem)=> <FormControlLabel value={typeItem.value}
+                                {foodTypes.map((typeItem,idx)=> <FormControlLabel key={idx} value={typeItem.value}
                                  control={<Radio />}
                                   label={typeItem.label} />
                               )}
@@ -93,7 +93,7 @@ const RestaurantDetails = () => {
                             </Typography>
                             <FormControl className='py-10 space-y-5' component={"fieldset"} >
                                <RadioGroup name="food_categories" value={category} onChange={handleFilter}>
-                                {categories.map((catItem)=> <FormControlLabel 
+                                {categories.map((catItem,idx)=> <FormControlLabel  key={idx}
                                 value={catItem} 
                                 control={<Radio />}
                                  label={catItem} />) }
@@ -104,7 +104,7 @@ const RestaurantDetails = () => {
                     </div>
                 </div>
                 <div className='space-y-5 lg:w-[80%] lg:pl-10'>
-                 {menu.map((menuItem)=> <MenuCard/>)}
+                 {menu.map((menuItem,idx)=> <MenuCard key={idx}/>)}
                 </div>
 
             </section>
