@@ -14,8 +14,8 @@ function App() {
       <CssBaseline>
         <Navbar />
       </CssBaseline>
-      {/* <Home/> */}
-      {/* <RestaurantDetails/> */}
+      {/* <Home/> 
+       <RestaurantDetails/> */}
       <Cart />
     </ThemeProvider>
 

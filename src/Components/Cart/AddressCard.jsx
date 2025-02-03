@@ -2,12 +2,11 @@ import React from "react";
 
 import HomeIcon from "@mui/icons-material/Home";
 import { Button, Card } from "@mui/material";
+import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 
-const AddressCard = ({item,showButton}) => {
+const AddressCard = ({item,showButton,handleSelectAddress}) => {
 
-    const handleSelectAddress =()=>{
-
-    }
+    
   return (
     <Card className="flex gap-5 w-64 p-5">
       <HomeIcon />
@@ -18,7 +17,7 @@ const AddressCard = ({item,showButton}) => {
         <p>
             150 Marina Park circle Bridgeport, CT-06604 , USA .
         </p>
-       {showButton &&(<Button  variant="contained" fullWidth onClick={()=>handleSelectAddress(item)}>select</Button>)}
+       {showButton &&(<Button  variant="outlined" fullWidth onClick={()=>handleSelectAddress(item)}>select</Button>)}
       </div>
     </Card>
   );
